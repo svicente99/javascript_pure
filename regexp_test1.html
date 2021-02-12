@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+.red  	{color: red;}
+.green	{color: green}
+#txt    {background-color: lightblue; font-weight: bolder; color: navy;}
+</style>
+<body>
+
+<h2>JavaScript Regular Expressions - a test</h2>
+<p>Click buttons above to do a case-insensitive <u>search</u> for 
+<strong>"w3schools"</strong> in this string: <input type="text" id="txt" value="w3schools"> 
+</p>
+
+<button onclick="myFunction(document.getElementById('txt').value, 'I');">Try it in the begining</button><br>
+<button onclick="myFunction(document.getElementById('txt').value, 'F');">&nbsp;&nbsp;&nbsp;Try it at the end&nbsp;&nbsp;&nbsp;</button>
+
+<p id="answer"></p>
+
+<script>
+function myFunction(str, pos2search) {
+  const pattern = (pos2search=='I' ? /^w3schools/ : /3schools$/);
+  
+  var objRE = new RegExp(pattern, "i");  // i=case insensitive
+  var match = objRE.test(str);
+  
+  if (match) {
+    document.getElementById("answer").className = "green";
+  	document.getElementById("answer").innerHTML = "Match! "+str;
+  } else {
+    document.getElementById("answer").className = "red";
+  	document.getElementById("answer").innerHTML = "No match...";
+  }
+}
+</script>
+
+</body>
+</html
