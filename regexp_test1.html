@@ -19,7 +19,9 @@
 
 <script>
 function myFunction(str, pos2search) {
-  const pattern = (pos2search=='I' ? /^w3schools/ : /3schools$/);
+  /* if the search occurs in the begining (I), use the special character ^,
+     to verify the search at the end (F), the special character is $      */
+  const pattern = (pos2search=='I' ? /^w3schools/ : /w3schools$/);
   
   var objRE = new RegExp(pattern, "i");  // i=case insensitive
   var match = objRE.test(str);
